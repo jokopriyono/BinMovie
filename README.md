@@ -6,7 +6,9 @@ Project ini merupakan contoh sederhana penerapan MVVM architecture design patter
 __MVVM__ - MVVM (Model, View, ViewModel). Berikut penggambaran sederhana arsitektur pada project ini.
 
 
-![mvvm_architecture](https://user-images.githubusercontent.com/60071765/94697016-50584e00-0355-11eb-924e-4ea28814b94e.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/60071765/94697016-50584e00-0355-11eb-924e-4ea28814b94e.png">
+</p>
 
 
 ## Android Jetpack components:
