@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/itemPopular"
     android:layout_width="160dp"
-    android:layout_height="280dp">
+    android:layout_height="280dp"
+    android:background="@color/dark_grey">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardMovie"
@@ -39,6 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Maze Runner - Guide to T…"
+        android:textColor="@color/white"
         android:textSize="12dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +51,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:alpha=".6"
         android:text="Dylan O'Brien, Kaya Scodelario, Will Poulter "
+        android:textColor="@color/white"
         android:textSize="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtJudul" />
