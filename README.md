@@ -1,5 +1,6 @@
 # Bin Movie
 Project ini merupakan contoh sederhana penerapan MVVM architecture design pattern menggunakan komponen android jetpack.
+Desain menggunakan Figma berikut https://www.figma.com/file/ROkA1SrtCgbKAbg4bKjzaA/My-Movie-DB
 
 ## MVVM
 
