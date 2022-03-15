@@ -17,7 +17,7 @@ class CustomLoadingDialog(context: Context) : Dialog(context) {
             WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.MATCH_PARENT
         )
-        setContentView(R.layout.loading_dialog)
+//        setContentView(R.layout.loading_dialog)
         setCancelable(false)
     }
 }
