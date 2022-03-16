@@ -1,9 +1,13 @@
-package com.bin.movie.data.remote.popular
+package com.bin.movie.data.remote
 
 
+import android.os.Parcelable
+import com.bin.movie.data.model.MovieEntity
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
-data class Result(
+@Parcelize
+data class Movie(
     @SerializedName("adult")
     val adult: Boolean,
     @SerializedName("backdrop_path")
@@ -32,4 +36,23 @@ data class Result(
     val voteAverage: Double,
     @SerializedName("vote_count")
     val voteCount: Int
-)
+):Parcelable {
+    fun toEntity(): MovieEntity {
+        return MovieEntity(
+            adult = adult,
+            backdropPath = backdropPath,
+            genreIds = genreIds.joinToString (","),
+            id = id.toLong(),
+            originalLanguage = originalLanguage,
+            originalTitle = originalTitle,
+            overview = overview,
+            popularity = popularity,
+            posterPath = posterPath,
+            releaseDate = releaseDate,
+            title = title,
+            video = video,
+            voteAverage = voteAverage,
+            voteCount = voteCount
+        )
+    }
+}
