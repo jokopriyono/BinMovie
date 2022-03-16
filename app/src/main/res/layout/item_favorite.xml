@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="335dp"
+    android:layout_height="89dp"
+    android:background="#25272A">
+
+    <ImageView
+        android:id="@+id/imgItemFavorite"
+        android:layout_width="178dp"
+        android:layout_height="89dp"
+        android:src="@drawable/img_item_favorite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtMovie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Itawewon Class"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgItemFavorite"
+        app:layout_constraintTop_toTopOf="@id/imgItemFavorite" />
+
+    <ImageView
+        android:id="@+id/imgHeart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:alpha=".7"
+        android:text="2020"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/txtMovie"
+        app:layout_constraintStart_toEndOf="@id/imgItemFavorite"
+        app:layout_constraintTop_toBottomOf="@id/txtMovie" />
+
+    <TextView
+        android:id="@+id/txtGenre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:alpha=".4"
+        android:text="Drama, Asian, Comedy, Series"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/txtMovie"
+        app:layout_constraintStart_toEndOf="@id/imgItemFavorite"
+        app:layout_constraintTop_toBottomOf="@id/txtYear" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
