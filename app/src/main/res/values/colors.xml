@@ -13,7 +13,5 @@
     <color name="primary_dark">@color/teal_700</color>
     <color name="accent">@color/purple_200</color>
     <color name="background">#25272A</color>
-
-
-
+    <color name="dark_grey">#25272A</color>
 </resources>
