@@ -5,6 +5,7 @@ import android.app.Activity
 import android.app.Application
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import androidx.viewbinding.BuildConfig
 import com.orhanobut.hawk.Hawk
 import timber.log.Timber
 
