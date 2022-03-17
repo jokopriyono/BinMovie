@@ -6,7 +6,7 @@ import android.app.Application
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.viewbinding.BuildConfig
-import com.orhanobut.hawk.Hawk
+import com.bin.movie.data.local.BinSharedPref
 import timber.log.Timber
 
 class BinMovieApp : Application() {
@@ -18,7 +18,7 @@ class BinMovieApp : Application() {
     }
 
     private fun setupHawk() {
-        Hawk.init(this).build()
+        BinSharedPref.appInit(this)
     }
 
     private fun setupTimber() {
