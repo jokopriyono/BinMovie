@@ -14,8 +14,9 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import timber.log.Timber
+import javax.inject.Inject
 
-class MainRepository(
+class MainRepository @Inject constructor(
     private val apiService: ApiService,
     private val movieDao: MovieDao,
     private val ioDispatcher: CoroutineDispatcher
