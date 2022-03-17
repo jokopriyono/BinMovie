@@ -1,5 +1,6 @@
 package com.bin.movie.data.remote
 
+import com.skydoves.sandwich.coroutines.CoroutinesResponseCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -9,8 +10,9 @@ object ApiClient {
 
     val instance: ApiService by lazy {
         val retrofit = Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl("https://api.themoviedb.org/3/")
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(CoroutinesResponseCallAdapterFactory.create())
             .client(OkHttpClient.Builder().addInterceptor(logging).build())
             .build()
 
