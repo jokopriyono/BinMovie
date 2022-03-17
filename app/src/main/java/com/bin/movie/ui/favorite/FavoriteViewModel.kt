@@ -1,5 +1,5 @@
 package com.bin.movie.ui.favorite
 
-import androidx.lifecycle.ViewModel
+import com.bin.movie.base.BaseViewModel
 
-class FavoriteViewModel : ViewModel()
+class FavoriteViewModel : BaseViewModel()

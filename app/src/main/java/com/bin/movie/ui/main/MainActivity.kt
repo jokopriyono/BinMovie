@@ -7,12 +7,14 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bin.movie.R
+import com.bin.movie.base.BaseActivity
+import com.bin.movie.base.Message
 import com.bin.movie.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
@@ -28,6 +30,12 @@ class MainActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             viewModel.fetchPopularMovies()
+        }
+    }
+
+    override fun setupObserver() {
+        viewModel.message.observe(this) {
+            showMessageToast(it)
         }
     }
 }

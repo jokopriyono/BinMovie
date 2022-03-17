@@ -1,5 +1,5 @@
 package com.bin.movie.ui.search
 
-import androidx.lifecycle.ViewModel
+import com.bin.movie.base.BaseViewModel
 
-class SearchViewModel : ViewModel()
+class SearchViewModel : BaseViewModel()

@@ -1,5 +1,5 @@
 package com.bin.movie.ui.home
 
-import androidx.lifecycle.ViewModel
+import com.bin.movie.base.BaseViewModel
 
-class HomeViewModel : ViewModel()
+class HomeViewModel : BaseViewModel()

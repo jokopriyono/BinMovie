@@ -1,5 +1,5 @@
 package com.bin.movie.ui.location
 
-import androidx.lifecycle.ViewModel
+import com.bin.movie.base.BaseViewModel
 
-class LocationViewModel : ViewModel()
+class LocationViewModel : BaseViewModel()
