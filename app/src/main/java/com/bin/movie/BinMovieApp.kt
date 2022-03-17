@@ -7,8 +7,10 @@ import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.viewbinding.BuildConfig
 import com.bin.movie.data.local.BinSharedPref
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
+@HiltAndroidApp
 class BinMovieApp : Application() {
     override fun onCreate() {
         super.onCreate()
