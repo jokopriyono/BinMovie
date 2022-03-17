@@ -4,12 +4,24 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.bin.movie.data.model.local.Example
 import com.bin.movie.data.model.local.MovieEntity
+import com.bin.movie.data.model.local.PopularEntity
+import com.bin.movie.data.model.local.UpComingEntity
 
-@Database(entities = [MovieEntity::class], version = 1)
+@Database(
+    entities = [
+        MovieEntity::class,
+        PopularEntity::class,
+        UpComingEntity::class
+    ],
+    version = 1,
+    exportSchema = false
+)
 abstract class BinDatabase : RoomDatabase() {
+
     abstract fun movieDao(): MovieDao
+    abstract fun popularDao(): PopularDao
+    abstract fun upComingDao(): UpComingDao
 
     companion object {
         private var database: BinDatabase? = null
