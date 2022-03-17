@@ -13,19 +13,19 @@
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.bin.movie.ui.dashboard.DashboardFragment"
+        android:name="com.bin.movie.ui.search.SearchFragment"
         android:label="@string/search"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_favorite"
-        android:name="com.bin.movie.ui.notifications.NotificationsFragment"
+        android:name="com.bin.movie.ui.favorite.FavoriteFragment"
         android:label="@string/favorite"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_favorite" />
 
     <fragment
         android:id="@+id/navigation_location"
-        android:name="com.bin.movie.LocationFragment"
+        android:name="com.bin.movie.ui.location.LocationFragment"
         android:label="@string/location"
         tools:layout="@layout/fragment_location" />
 </navigation>

@@ -1,10 +1,10 @@
-package com.bin.movie
+package com.bin.movie.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.bin.movie.R
 import com.bin.movie.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

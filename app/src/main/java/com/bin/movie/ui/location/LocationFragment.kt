@@ -1,25 +1,27 @@
-package com.bin.movie
+package com.bin.movie.ui.location
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bin.movie.databinding.FragmentSearchBinding
+import com.bin.movie.databinding.FragmentLocationBinding
 
+class LocationFragment : Fragment() {
 
-class SearchFragment : Fragment() {
-
-    private var _binding: FragmentSearchBinding? = null
+    private var _binding: FragmentLocationBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSearchBinding.inflate(inflater, container, false)
+        _binding = FragmentLocationBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
