@@ -1,6 +1,6 @@
-package com.bin.movie.data.remote.popular
+package com.bin.movie.data.model.remote.popular
 
-import com.bin.movie.data.remote.Movie
+import com.bin.movie.data.model.remote.Movie
 import com.google.gson.annotations.SerializedName
 
 data class PopularResponse(

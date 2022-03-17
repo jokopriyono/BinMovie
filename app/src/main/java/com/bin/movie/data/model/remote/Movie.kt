@@ -1,8 +1,8 @@
-package com.bin.movie.data.remote
+package com.bin.movie.data.model.remote
 
 
 import android.os.Parcelable
-import com.bin.movie.data.model.MovieEntity
+import com.bin.movie.data.model.local.MovieEntity
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 

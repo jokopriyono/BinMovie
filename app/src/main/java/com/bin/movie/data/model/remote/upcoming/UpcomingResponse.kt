@@ -1,7 +1,7 @@
-package com.bin.movie.data.remote.upcoming
+package com.bin.movie.data.model.remote.upcoming
 
 
-import com.bin.movie.data.remote.Movie
+import com.bin.movie.data.model.remote.Movie
 import com.google.gson.annotations.SerializedName
 
 data class UpcomingResponse(

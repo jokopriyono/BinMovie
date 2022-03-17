@@ -1,7 +1,7 @@
 package com.bin.movie.data.remote
 
-import com.bin.movie.data.remote.popular.PopularResponse
-import com.bin.movie.data.remote.upcoming.UpcomingResponse
+import com.bin.movie.data.model.remote.popular.PopularResponse
+import com.bin.movie.data.model.remote.upcoming.UpcomingResponse
 import com.skydoves.sandwich.ApiResponse
 import retrofit2.http.GET
 import retrofit2.http.Query

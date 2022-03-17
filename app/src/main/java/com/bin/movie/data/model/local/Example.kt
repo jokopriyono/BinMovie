@@ -1,4 +1,4 @@
-package com.bin.movie.data.model
+package com.bin.movie.data.model.local
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo
