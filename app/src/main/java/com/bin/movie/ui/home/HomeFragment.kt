@@ -19,6 +19,9 @@ class HomeFragment : Fragment() {
     private val popularAdapter = PopularAdapter(mutableListOf()) {
         // TODO intent to detail movie screen
     }
+    private val upComingAdapter = UpcomingAdapter(mutableListOf()) {
+        // TODO intent to detail movie screen
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,14 +48,26 @@ class HomeFragment : Fragment() {
             )
             adapter = popularAdapter
         }
+        binding.recyclerComingSoon.apply {
+            layoutManager = LinearLayoutManager(
+                context,
+                RecyclerView.HORIZONTAL,
+                false
+            )
+            adapter = upComingAdapter
+        }
 
         setupObserver()
     }
 
     private fun setupObserver() {
-        viewModel.movies.observe(viewLifecycleOwner) {
+        viewModel.popularMovies.observe(viewLifecycleOwner) {
             popularAdapter.populars.addAll(it)
             popularAdapter.notifyDataSetChanged()
+        }
+        viewModel.upComingMovies.observe(viewLifecycleOwner) {
+            upComingAdapter.upComingMovies.addAll(it)
+            upComingAdapter.notifyDataSetChanged()
         }
     }
 

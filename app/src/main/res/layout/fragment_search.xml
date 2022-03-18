@@ -57,6 +57,7 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintStart_toStartOf="@id/txtResult"
         app:layout_constraintTop_toBottomOf="@id/txtResult"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="#"
         app:spanCount="2" />
 

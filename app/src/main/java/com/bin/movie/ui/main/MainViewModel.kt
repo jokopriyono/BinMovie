@@ -13,7 +13,8 @@ class MainViewModel @Inject constructor(
     private val mainRepository: MainRepository
 ) : BaseViewModel() {
 
-    val movies = MutableLiveData<List<MovieEntity>>()
+    val popularMovies = MutableLiveData<List<MovieEntity>>()
+    val upComingMovies = MutableLiveData<List<MovieEntity>>()
 
     suspend fun fetchPopularMovies() {
         mainRepository.getPopularMovies(
@@ -28,24 +29,20 @@ class MainViewModel @Inject constructor(
             },
             "4e017aafa0c4da4d663bc40fa6d6afe0"
         ).collect {
-            movies.postValue(it)
+            popularMovies.postValue(it)
         }
     }
 
     suspend fun fetchUpComingMovies() {
         mainRepository.getUpComingMovies(
-            onStart = {
-
-            },
-            onComplete = {
-
-            },
+            onStart = {},
+            onComplete = {},
             onError = {
                 _message.postValue(it)
             },
             "4e017aafa0c4da4d663bc40fa6d6afe0"
         ).collect {
-            movies.postValue(it)
+            upComingMovies.postValue(it)
         }
     }
 
