@@ -6,19 +6,19 @@ import androidx.lifecycle.ViewModel
 
 abstract class BaseViewModel: ViewModel()  {
 
-    protected val _loading = MutableLiveData<Boolean>()
+    protected val _loading = MutableLiveData(false)
     val loading: LiveData<Boolean> = _loading
 
     protected val _message = MutableLiveData<String>()
     val message: LiveData<String> = _message
 
     protected fun showLoading() {
-        _loading.value = true
+        _loading.postValue(true)
     }
 
     protected fun hideLoading() {
         if (_loading.value == true) {
-            _loading.value = false
+            _loading.postValue(false)
         }
     }
 
