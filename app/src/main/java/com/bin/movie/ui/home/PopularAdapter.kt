@@ -1,4 +1,4 @@
-package com.bin.movie.ui.main
+package com.bin.movie.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ class PopularAdapter(
     inner class ViewHolder(val binding: ItemPopularBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = ItemPopularBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(view)
     }
