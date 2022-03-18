@@ -1,61 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/itemPopular"
-    android:layout_width="160dp"
-    android:layout_height="280dp"
-    android:background="@color/dark_grey">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardMovie"
-        android:layout_width="160dp"
-        android:layout_height="214dp"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imgItemPopular"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/app_name"
-            android:src="@mipmap/ic_launcher" />
-
-    </androidx.cardview.widget.CardView>
-
-    <ImageView
-        android:id="@+id/imgHd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/hd"
-        app:layout_constraintBottom_toBottomOf="@id/cardMovie"
-        app:layout_constraintStart_toStartOf="@id/cardMovie" />
-
-    <TextView
-        android:id="@+id/txtJudul"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Maze Runner - Guide to T…"
-        android:textColor="@color/white"
-        android:textSize="12dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardMovie" />
-
-    <TextView
-        android:id="@+id/txtDesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:alpha=".6"
-        android:text="Dylan O'Brien, Kaya Scodelario, Will Poulter "
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtJudul" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/imgPopular"
+    android:layout_width="102dp"
+    android:layout_height="157dp"
+    android:layout_marginEnd="8dp"
+    android:background="@color/dark_grey"
+    android:contentDescription="@string/app_name" />

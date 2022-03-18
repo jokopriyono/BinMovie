@@ -1,6 +1,8 @@
 package com.bin.movie.ui.main
 
+import androidx.lifecycle.MutableLiveData
 import com.bin.movie.base.BaseViewModel
+import com.bin.movie.data.model.local.MovieEntity
 import com.bin.movie.repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
@@ -11,6 +13,8 @@ class MainViewModel @Inject constructor(
     private val mainRepository: MainRepository
 ) : BaseViewModel() {
 
+    val movies = MutableLiveData<List<MovieEntity>>()
+
     suspend fun fetchPopularMovies() {
         mainRepository.getPopularMovies(
             onStart = {
@@ -20,12 +24,11 @@ class MainViewModel @Inject constructor(
                 hideLoading()
             },
             onError = {
-                _message.value = it
+                _message.postValue(it)
             },
             "4e017aafa0c4da4d663bc40fa6d6afe0"
         ).collect {
-            println("pesan: Dapet nih")
-            println(it.results)
+            movies.postValue(it)
         }
     }
 

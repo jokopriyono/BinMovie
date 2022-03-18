@@ -35,7 +35,7 @@ class MainRepository @Inject constructor(
                     it.toEntity()
                 }
                 movieDao.insertAllMovies(movies)
-                emit(this.data)
+                emit(movies)
             }.onError {
                 Timber.e(this.message())
                 onError(this.message())
