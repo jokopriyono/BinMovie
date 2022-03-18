@@ -32,5 +32,22 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    suspend fun fetchUpComingMovies() {
+        mainRepository.getUpComingMovies(
+            onStart = {
+
+            },
+            onComplete = {
+
+            },
+            onError = {
+                _message.postValue(it)
+            },
+            "4e017aafa0c4da4d663bc40fa6d6afe0"
+        ).collect {
+            movies.postValue(it)
+        }
+    }
+
 
 }
