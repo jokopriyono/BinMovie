@@ -9,7 +9,6 @@ import android.view.WindowManager
 import com.bin.movie.R
 
 class CustomLoadingDialog(context: Context) : Dialog(context) {
-
     init {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -17,7 +16,7 @@ class CustomLoadingDialog(context: Context) : Dialog(context) {
             WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.MATCH_PARENT
         )
-//        setContentView(R.layout.loading_dialog)
+        setContentView(R.layout.loading_dialog)
         setCancelable(false)
     }
 }

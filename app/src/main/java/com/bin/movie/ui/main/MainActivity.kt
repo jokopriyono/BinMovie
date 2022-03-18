@@ -2,13 +2,11 @@ package com.bin.movie.ui.main
 
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bin.movie.R
 import com.bin.movie.base.BaseActivity
-import com.bin.movie.base.Message
 import com.bin.movie.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -36,6 +34,9 @@ class MainActivity : BaseActivity() {
     override fun setupObserver() {
         viewModel.message.observe(this) {
             showMessageToast(it)
+        }
+        viewModel.loading.observe(this) {
+            if (it) showLoading() else hideLoading()
         }
     }
 }
