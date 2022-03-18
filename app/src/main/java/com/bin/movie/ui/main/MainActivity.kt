@@ -28,6 +28,7 @@ class MainActivity : BaseActivity() {
 
         lifecycleScope.launch {
             viewModel.fetchPopularMovies()
+            viewModel.fetchUpComingMovies()
         }
     }
 

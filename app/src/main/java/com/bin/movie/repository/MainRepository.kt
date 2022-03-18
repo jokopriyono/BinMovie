@@ -51,4 +51,34 @@ class MainRepository @Inject constructor(
         .onCompletion { onComplete() }
         .flowOn(ioDispatcher)
 
+
+    suspend fun getUpComingMovies(
+        onStart: () -> Unit,
+        onComplete: () -> Unit,
+        onError: (String?) -> Unit,
+        apiKey: String
+    ) = flow {
+        if (networkStateManager.isOnline()) {
+            val response = apiService.getMovieUpcoming(apiKey)
+            response.suspendOnSuccess {
+                val movies = this.data.results.map {
+                    it.toEntity()
+                }
+                movieDao.insertAllMovies(movies)
+                emit(movies)
+            }.onError {
+                Timber.e(this.message())
+                onError(this.message())
+            }.onException {
+                Timber.e(this.message())
+                onError(this.message())
+            }
+        } else {
+            onError("Tidak ada koneksi internet")
+        }
+    }
+        .onStart { onStart() }
+        .onCompletion { onComplete() }
+        .flowOn(ioDispatcher)
+
 }
