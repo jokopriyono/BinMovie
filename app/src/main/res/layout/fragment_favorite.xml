@@ -4,19 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#25272A"
     tools:context=".ui.favorite.FavoriteFragment">
 
-    <TextView
-        android:id="@+id/text_notifications"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSearchFavorite"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="56dp"
+        app:cardBackgroundColor="#202123"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/edtNameFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Search"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imgSearch"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="322dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/search" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardSearchFavorite"
+        tools:listitem="@layout/item_favorite"
+        app:spanCount="1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
