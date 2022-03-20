@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.location.LocationFragment">
 
-    <View
-        android:id="@+id/viewDummy"
+    <org.osmdroid.views.MapView
+        android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/darker_gray" />
@@ -28,7 +28,7 @@
                 android:id="@+id/txtCurrent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Your current location"
+                android:text="@string/your_current_location"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -39,7 +39,7 @@
                 android:id="@+id/txtLatitude"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Latitude : 123.123"
+                android:text="@string/latitude"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="@id/txtCurrent"
@@ -50,7 +50,7 @@
                 android:id="@+id/txtLongitude"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Latitude : -123.123"
+                android:text="@string/longitude"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"

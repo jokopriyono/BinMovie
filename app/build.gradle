@@ -38,6 +38,9 @@ android {
 }
 
 dependencies {
+    // OsmDroid
+    implementation 'org.osmdroid:osmdroid-android:6.1.11'
+
     // Hawk
     implementation 'com.orhanobut:hawk:2.0.1'
 
