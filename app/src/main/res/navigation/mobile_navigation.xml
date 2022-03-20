@@ -28,4 +28,10 @@
         android:name="com.bin.movie.ui.location.LocationFragment"
         android:label="@string/location"
         tools:layout="@layout/fragment_location" />
+
+    <fragment
+        android:id="@+id/navigation_upload"
+        android:name="com.bin.movie.ui.upload.UploadFragment"
+        android:label="@string/upload"
+        tools:layout="@layout/fragment_upload" />
 </navigation>

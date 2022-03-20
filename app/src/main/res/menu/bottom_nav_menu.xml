@@ -21,4 +21,9 @@
         android:icon="@drawable/ic_loc"
         android:title="@string/location" />
 
+    <item
+        android:id="@+id/navigation_upload"
+        android:icon="@drawable/ic_cloud_upload"
+        android:title="@string/upload" />
+
 </menu>
