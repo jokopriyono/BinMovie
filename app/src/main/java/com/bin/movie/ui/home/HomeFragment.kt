@@ -1,5 +1,6 @@
 package com.bin.movie.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bin.movie.databinding.FragmentHomeBinding
+import com.bin.movie.ui.detail.DetailActivity
 import com.bin.movie.ui.main.MainViewModel
 
 class HomeFragment : Fragment() {
@@ -18,9 +20,13 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private val popularAdapter = PopularAdapter(mutableListOf()) {
         // TODO intent to detail movie screen
+        val intent = Intent(requireContext(), DetailActivity::class.java)
+        startActivity(intent)
     }
     private val upComingAdapter = UpcomingAdapter(mutableListOf()) {
         // TODO intent to detail movie screen
+        val intent = Intent(requireContext(), DetailActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onCreateView(
