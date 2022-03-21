@@ -59,7 +59,7 @@ class LocationFragment : Fragment() {
         binding.mapView.setMultiTouchControls(true)
         binding.mapView.controller.zoomTo(15.0)
         val coordinateMonas = GeoPoint(-6.1756259, 106.8265448)
-        binding.mapView.controller.animateTo(coordinateMonas, 15.0, 600L)
+        binding.mapView.controller.animateTo(coordinateMonas, 16.0, 1000L)
 
         val locationOverlay = object : MyLocationNewOverlay(binding.mapView) {
             override fun onLocationChanged(
