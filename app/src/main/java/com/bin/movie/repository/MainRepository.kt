@@ -76,7 +76,6 @@ class MainRepository @Inject constructor(
         .onCompletion { onComplete() }
         .flowOn(ioDispatcher)
 
-
     suspend fun getUpComingMovies(
         onStart: () -> Unit,
         onComplete: () -> Unit,
