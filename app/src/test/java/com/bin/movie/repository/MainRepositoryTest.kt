@@ -1,11 +1,9 @@
 package com.bin.movie.repository
 
-import android.content.Context
 import app.cash.turbine.test
 import com.bin.movie.MainCoroutinesRule
 import com.bin.movie.data.local.MovieDao
 import com.bin.movie.data.remote.ApiService
-import com.bin.movie.data.remote.NetworkStateManagerImpl
 import com.bin.movie.utils.MockUtils.mockPopularMoviesResponse
 import com.nhaarman.mockitokotlin2.*
 import com.skydoves.sandwich.ApiResponse
@@ -26,15 +24,13 @@ class MainRepositoryTest {
     private lateinit var repository: MainRepository
     private val apiService: ApiService = mock()
     private val movieDao: MovieDao = mock()
-    private var context: Context = org.mockito.Mockito.mock(Context::class.java)
 
     @get:Rule
     var coroutinesRule = MainCoroutinesRule()
 
     @Before
     fun setup() {
-        val networkStateManager = NetworkStateManagerImpl(context)
-        repository = MainRepository(apiService, movieDao, Dispatchers.IO, networkStateManager)
+        repository = MainRepository(apiService, movieDao, Dispatchers.IO)
     }
 
     @Test
@@ -58,7 +54,7 @@ class MainRepositoryTest {
             val mockMovie = mockPopularResponse.results[0]
             val expectedItem = awaitItem()[0]
 
-            assertEquals(expectedItem.id, mockMovie.id)
+            assertEquals(expectedItem.id.toInt(), mockMovie.id)
             assertEquals(expectedItem.title, mockMovie.title)
             assertEquals(expectedItem.posterPath, mockMovie.posterPath)
             awaitComplete()
