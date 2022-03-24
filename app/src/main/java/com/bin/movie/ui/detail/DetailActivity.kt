@@ -1,8 +1,9 @@
 package com.bin.movie.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.bin.movie.R
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bin.movie.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -15,5 +16,21 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
+        setupRecycler()
+    }
+
+    private fun setupRecycler() {
+        val mGenre = listOf("Adventure", "Action", "Comedy")
+
+        binding.recyclerGenre.apply {
+            layoutManager = LinearLayoutManager(this@DetailActivity, RecyclerView.HORIZONTAL, false)
+            adapter = GenreAdapter(mGenre)
+        }
+
+        binding.recyclerCast.apply {
+            layoutManager = LinearLayoutManager(this@DetailActivity, RecyclerView.HORIZONTAL, false)
+            adapter = CastAdapter()
+        }
     }
 }

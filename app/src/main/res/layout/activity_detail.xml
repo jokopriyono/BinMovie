@@ -1,9 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".ui.detail.DetailActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="25dp">
+
+        <ImageView
+            android:id="@+id/imgMovie"
+            android:layout_width="match_parent"
+            android:layout_height="563dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgStack"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_stack"
+            app:layout_constraintBottom_toBottomOf="@id/imgMovie"
+            app:layout_constraintEnd_toEndOf="@id/imgMovie"
+            app:layout_constraintStart_toStartOf="@id/imgMovie"
+            app:layout_constraintTop_toTopOf="@id/imgMovie" />
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_left"
+            app:layout_constraintStart_toStartOf="@id/imgMovie"
+            app:layout_constraintTop_toTopOf="@id/imgMovie"
+            app:tint="#04837C" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:text="Now You See Me 2"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/txtDuration"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txtDuration" />
+
+        <TextView
+            android:id="@+id/txtDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="1h 29m"
+            android:textColor="#B2FFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerGenre"
+            app:layout_constraintStart_toStartOf="@+id/recyclerGenre" />
+
+        <ImageView
+            android:id="@+id/imgHd"
+            android:layout_width="18dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="4dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_hd"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDuration"
+            app:layout_constraintStart_toEndOf="@id/txtDuration"
+            app:layout_constraintTop_toTopOf="@+id/txtDuration" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="14dp"
+            android:layout_marginBottom="24dp"
+            android:nestedScrollingEnabled="false"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/btnWatch"
+            app:layout_constraintStart_toStartOf="@+id/btnWatch"
+            tools:listitem="@layout/item_genre"
+            tools:itemCount="3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnWatch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#04837C"
+            android:text="Watch Trailer"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:cornerRadius="4dp"
+            app:icon="@drawable/ic_play"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/imgMovie"
+            app:layout_constraintEnd_toStartOf="@id/btnFavorite"
+            app:layout_constraintStart_toStartOf="@+id/imgMovie" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFavorite"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@android:color/transparent"
+            android:text="Add to Favorite"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:cornerRadius="4dp"
+            app:icon="@drawable/ic_add"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/btnWatch"
+            app:layout_constraintEnd_toEndOf="@id/imgMovie"
+            app:layout_constraintStart_toEndOf="@+id/btnWatch"
+            app:layout_constraintTop_toTopOf="@+id/btnWatch"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp" />
+
+        <TextView
+            android:id="@+id/txtOverview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/movie_desc"
+            android:textColor="#B2FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/btnFavorite"
+            app:layout_constraintStart_toStartOf="@+id/btnWatch"
+            app:layout_constraintTop_toBottomOf="@id/imgMovie" />
+
+        <TextView
+            android:id="@+id/txtCast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Cast"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/txtOverview"
+            app:layout_constraintTop_toBottomOf="@id/txtOverview" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:nestedScrollingEnabled="true"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="@id/txtCast"
+            app:layout_constraintTop_toBottomOf="@id/txtCast"
+            tools:listitem="@layout/item_cast" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
