@@ -1,4 +1,4 @@
-package com.bin.movie.repository
+package com.bin.movie
 
 import android.text.format.DateUtils
 import java.text.ParseException
