@@ -11,7 +11,7 @@ data class Movie(
     @SerializedName("adult")
     val adult: Boolean,
     @SerializedName("backdrop_path")
-    val backdropPath: String,
+    val backdropPath: String?,
     @SerializedName("genre_ids")
     val genreIds: List<Int>,
     @SerializedName("id")
@@ -25,9 +25,9 @@ data class Movie(
     @SerializedName("popularity")
     val popularity: Double,
     @SerializedName("poster_path")
-    val posterPath: String,
+    val posterPath: String?,
     @SerializedName("release_date")
-    val releaseDate: String,
+    val releaseDate: String?,
     @SerializedName("title")
     val title: String,
     @SerializedName("video")
@@ -40,15 +40,15 @@ data class Movie(
     fun toEntity(): MovieEntity {
         return MovieEntity(
             adult = adult,
-            backdropPath = backdropPath,
-            genreIds = genreIds.joinToString (","),
+            backdropPath = backdropPath ?: "",
+            genreIds = genreIds.joinToString(","),
             id = id.toLong(),
             originalLanguage = originalLanguage,
             originalTitle = originalTitle,
             overview = overview,
             popularity = popularity,
-            posterPath = posterPath,
-            releaseDate = releaseDate,
+            posterPath = posterPath ?: "",
+            releaseDate = releaseDate ?: "",
             title = title,
             video = video,
             voteAverage = voteAverage,

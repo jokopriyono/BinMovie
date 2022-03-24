@@ -14,4 +14,5 @@
     <string name="latitude">Latitude: %1$s</string>
     <string name="longitude">Longitude: %1$s</string>
     <string name="your_current_location">Your current location</string>
+    <string name="hint_search">Try \'Spiderman\'</string>
 </resources>
