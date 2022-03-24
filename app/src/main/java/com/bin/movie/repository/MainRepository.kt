@@ -95,4 +95,30 @@ class MainRepository @Inject constructor(
         .onCompletion { onComplete() }
         .flowOn(ioDispatcher)
 
+    suspend fun searchMovies(
+        onStart: () -> Unit,
+        onComplete: () -> Unit,
+        onError: (String?) -> Unit,
+        apiKey: String,
+        query: String
+    ) = flow {
+        val response = apiService.searchMovies(apiKey, query)
+        response.suspendOnSuccess {
+            val movies = this.data.results.map {
+                it.toEntity()
+            }
+            movieDao.insertAllMovies(movies)
+            emit(movies)
+        }.onError {
+            Timber.e(this.message())
+            onError(this.message())
+        }.onException {
+            Timber.e(this.message())
+            onError(this.message())
+        }
+    }
+        .onStart { onStart() }
+        .onCompletion { onComplete() }
+        .flowOn(ioDispatcher)
+
 }
