@@ -1,6 +1,7 @@
 package com.bin.movie.data.remote
 
 import com.bin.movie.data.model.remote.popular.PopularResponse
+import com.bin.movie.data.model.remote.search.SearchResponse
 import com.bin.movie.data.model.remote.upcoming.UpcomingResponse
 import com.bin.movie.data.model.remote.upload.UploadResponse
 import com.skydoves.sandwich.ApiResponse
@@ -28,4 +29,9 @@ interface ApiService {
         @Query("api_key") apiKey: String
     ): ApiResponse<UpcomingResponse>
 
+    @GET("search/movie")
+    suspend fun searchMovies(
+        @Query("api_key") apiKey: String,
+        @Query("query") query: String
+    ): ApiResponse<SearchResponse>
 }
