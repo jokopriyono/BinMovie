@@ -18,7 +18,19 @@
         android:theme="@style/Theme.BinMovie">
         <activity
             android:name=".ui.detail.DetailActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter android:label="Detail Movie">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.bin.movie"
+                    android:pathPrefix="/detail"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true">
