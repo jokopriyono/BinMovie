@@ -15,26 +15,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/edtNameFavorite"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="19dp"
-            android:layout_marginEnd="20dp"
-            android:hint="Search"
-            android:inputType="text"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imgSearch"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginStart="322dp"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/search" />
+            <TextView
+                android:id="@+id/txtError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ini pesan error dari edittext"
+                android:textColor="@android:color/holo_red_light"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtNameFavorite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="20dp"
+                android:hint="Search"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imgSearch"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="322dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/search" />
+        </LinearLayout>
+
     </androidx.cardview.widget.CardView>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerFavorite"

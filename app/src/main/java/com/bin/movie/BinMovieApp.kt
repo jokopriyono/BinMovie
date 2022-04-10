@@ -12,6 +12,15 @@ import timber.log.Timber
 
 @HiltAndroidApp
 class BinMovieApp : Application() {
+
+    companion object {
+        init {
+            System.loadLibrary("native-lib")
+        }
+    }
+
+    external fun baseUrl(): String
+
     override fun onCreate() {
         super.onCreate()
         setupTimber()

@@ -35,6 +35,13 @@ android {
     buildFeatures {
         viewBinding true
     }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
+    }
+    ndkVersion = '21.0.6113669'
 }
 
 dependencies {
