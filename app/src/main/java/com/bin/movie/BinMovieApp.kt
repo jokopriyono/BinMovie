@@ -20,6 +20,7 @@ class BinMovieApp : Application() {
     }
 
     external fun baseUrl(): String
+    external fun apiKey(): String
 
     override fun onCreate() {
         super.onCreate()
